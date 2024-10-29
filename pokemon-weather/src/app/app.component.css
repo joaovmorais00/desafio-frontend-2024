@@ -1,0 +1,16 @@
+.main{
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.width-100-component{
+    width: 100%;
+}
+
+.center-component{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,18 @@
+<form class="search-form">
+  <mat-form-field class="search-full-width">
+    <mat-label>Busque por uma cidade</mat-label>
+    <input
+      type="text"
+      placeholder="Digite o nome de uma cidade"
+      aria-label="Cidade"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (option of filteredOptions | async; track option) {
+      <mat-option [value]="option">{{ option }}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
