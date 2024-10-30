@@ -1,10 +1,14 @@
 .search-form {
-    min-width: 9.4rem;
-    max-width: 40rem;
-    width: 100%;
-    margin-top: 1rem;
+  min-width: 9.4rem;
+  max-width: 40rem;
+  width: 100%;
+  margin-top: 1rem;
 }
-  
+
 .search-full-width {
-    width: 100%;
+  width: 100%;
+}
+
+.state-and-country {
+  color: #70757a;
 }
