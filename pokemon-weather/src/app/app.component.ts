@@ -12,4 +12,5 @@ import { PokemonInfosComponent } from './components/pokemon-infos/pokemon-infos.
 })
 export class AppComponent {
   title = 'pokemon-weather';
+  constructor() {}
 }

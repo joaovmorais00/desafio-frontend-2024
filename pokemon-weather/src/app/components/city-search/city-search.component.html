@@ -6,12 +6,21 @@
       placeholder="Digite o nome de uma cidade"
       aria-label="Cidade"
       matInput
-      [formControl]="myControl"
+      [formControl]="searchCityInput"
       [matAutocomplete]="auto"
     />
-    <mat-autocomplete #auto="matAutocomplete">
-      @for (option of filteredOptions | async; track option) {
-      <mat-option [value]="option">{{ option }}</mat-option>
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      (optionSelected)="onSelectionChanged($event.option.value)"
+    >
+      @for (option of options | async; track option) {
+      <mat-option [value]="option"
+        >{{ option.name }}
+        <span class="state-and-country">
+          @if (option.state) { {{ option.state }} - } @if(option.country) {
+          {{ option.country }} }
+        </span></mat-option
+      >
       }
     </mat-autocomplete>
   </mat-form-field>
