@@ -1,12 +1,16 @@
-@if(false){
+@if (!!pokemon.name) {
 <div class="pokemon-infos">
-  <p>Nessa cidade encontramos pokémons do tipo: "Elétrico"</p>
+  <p>
+    Nessa cidade encontramos pokémons do tipo:
+    {{
+      !!pokemonType
+        ? firstLetterUpperCase(pokemonTypePortuguese[pokemonType])
+        : ""
+    }}
+  </p>
   <p>Um exemplo de pokémon desse tipo é:</p>
-  <h3>Pikachu</h3>
-  <img
-    class="pokemon-image"
-    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-    alt="pokemon_image"
-  />
+  <h3>{{ pokemon.name ? firstLetterUpperCase(pokemon.name) : "" }}</h3>
+  :
+  <img class="pokemon-image" [src]="pokemonImage" alt="pokemon_image" />
 </div>
 }

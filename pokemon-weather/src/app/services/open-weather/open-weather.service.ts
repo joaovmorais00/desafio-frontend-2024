@@ -19,11 +19,20 @@ export class OpenWeatherService {
     lon: '',
   });
   selectedCity$ = this.selectedCity.asObservable();
+  private weatherFromCity = new BehaviorSubject<Weather>({
+    temperature: '',
+    isRaining: false,
+  });
+  weatherFromCity$ = this.weatherFromCity.asObservable();
 
   constructor(private http: HttpClient) {}
 
   updateSelectedCity(city: CityResponse) {
     this.selectedCity.next(city);
+  }
+
+  updateWeatherFromCity(weather: Weather) {
+    this.weatherFromCity.next(weather);
   }
 
   getCities(query: string): Observable<CityResponse[]> {
@@ -33,7 +42,7 @@ export class OpenWeatherService {
   }
 
   getWeatherByCity(city: CityResponse | null): Observable<Weather> {
-    if (city) {
+    if (!!city?.name) {
       return this.http
         .get(`${this.weatherUrl}lat=${city.lat}&lon=${city.lon}`)
         .pipe(

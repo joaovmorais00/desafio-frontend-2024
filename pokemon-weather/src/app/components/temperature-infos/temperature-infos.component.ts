@@ -24,6 +24,11 @@ export class TemperatureInfosComponent implements OnInit {
           return this.openWeatherService.getWeatherByCity(value);
         })
       )
-      .subscribe((response) => (this.weather = response));
+      .subscribe((response) =>
+        this.openWeatherService.updateWeatherFromCity(response)
+      );
+    this.openWeatherService.weatherFromCity$.subscribe(
+      (newWeather) => (this.weather = newWeather)
+    );
   }
 }
