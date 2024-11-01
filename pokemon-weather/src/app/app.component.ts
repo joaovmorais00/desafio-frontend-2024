@@ -18,5 +18,6 @@ import { TemperatureInfosComponent } from './components/temperature-infos/temper
 })
 export class AppComponent {
   title = 'pokemon-weather';
+  actualYear = new Date().getFullYear();
   constructor() {}
 }
