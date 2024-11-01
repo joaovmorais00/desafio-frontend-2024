@@ -1,0 +1,16 @@
+@if(selectedCity.name != ""){
+<div class="temperature-infos">
+  <p>
+    A temperatura atual de
+    <span class="bold-text"
+      >{{ selectedCity.name }} - {{ selectedCity.state }}({{
+        selectedCity.country
+      }})</span
+    >
+    é: <span class="bold-text">{{ weather.temperature }}</span> C°
+  </p>
+  @if(weather.isRaining){
+  <p class="bold-text">{{ "Está chovendo nessa cidade" }}</p>
+  }
+</div>
+}

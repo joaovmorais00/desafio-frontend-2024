@@ -6,7 +6,7 @@ import { AsyncPipe } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { OpenWeatherService } from '../../services/open-weather.service';
+import { OpenWeatherService } from '../../services/open-weather/open-weather.service';
 import { CityResponse } from '../../types/cities';
 
 @Component({
@@ -43,5 +43,6 @@ export class CitySearchComponent implements OnInit {
     this.searchCityInput.setValue(
       `${option.name} - ${option.state}(${option.country})`
     );
+    this.openWeatherService.updateSelectedCity(option);
   }
 }
