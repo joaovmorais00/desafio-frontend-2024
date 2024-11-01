@@ -40,12 +40,12 @@ O projeto consiste em uma aplicação web que:
 ### Primeira execução:
  1. Baixe o repositório.
  2. Acesse o arquivo pokemon-weather/src/environments com algum editor de texto, substitua o texto `{API_KEY}` por sua chave gerada no site da API  [OpenWeatherMap](https://openweathermap.org/api) e salve a alteração.
- 3. Abra a pasta do repositório a partir do terminal e execute o comando: `npm install`.
+ 3. Abra a pasta pokemon-weather/ a partir do terminal e execute o comando: `npm install`.
  4. Execute o comando: `npm start`.
  5. Pelo navegador acesse a porta indicada no terminal, normalmente (http://localhost:4200/).
 
 ### Próximas execuções:
 
- 1. Abra a pasta do repositório a partir do terminal e execute o comando: `npm start`.
+ 1. Abra a pasta pokemon-weather/ a partir do terminal e execute o comando: `npm start`.
 
   
